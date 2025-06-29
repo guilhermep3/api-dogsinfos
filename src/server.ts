@@ -16,6 +16,6 @@ server.use(indexRoutes);
 server.use(notFoundRequest);
 server.use(errorHandler);
 
-server.listen(port, () => {
+server.listen(process.env.PORT || port, () => {
   console.log("Servidor rodando em http://localhost:3001")
 })
