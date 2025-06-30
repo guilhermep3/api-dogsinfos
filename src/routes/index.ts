@@ -1,5 +1,5 @@
 import express from "express";
-import dogsRoutes from "../routes/dogsRoutes"
+import dogsRoutes from "./dogsRoutes"
 import { middleware } from "./middleware";
 
 const router = express.Router();

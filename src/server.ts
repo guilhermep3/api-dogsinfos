@@ -1,7 +1,7 @@
 import express from "express";
 import helmet from "helmet";
 import path from "path";
-import indexRoutes from "../src/routes";
+import indexRoutes from "./routes";
 import { errorHandler, notFoundRequest } from "./routes/errorHandler";
 
 const server = express();
