@@ -5,17 +5,17 @@ import indexRoutes from "./routes";
 import { errorHandler, notFoundRequest } from "./routes/errorHandler";
 
 const server = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 server.use(helmet());
 server.use(express.json());
-server.use(express.urlencoded({extended: true}));
-server.use(express.static(path.join(__dirname, '../public')));
+server.use(express.urlencoded({ extended: true }));
+server.use(express.static(path.resolve(__dirname, '../public')));
 
 server.use(indexRoutes);
 server.use(notFoundRequest);
 server.use(errorHandler);
 
-server.listen(process.env.PORT || port, () => {
-  console.log("Servidor rodando em http://localhost:3001")
-})
+server.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});
