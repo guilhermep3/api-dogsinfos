@@ -15,11 +15,11 @@ export const home = (req: Request, res: Response) => {
     list = list.filter(d => d.countryOrigin === country);
   }
 
-  res.json({ dogs: list });
+  res.json(list);
 }
 
 export const details = (req: Request, res: Response) => {
-  const id = parseInt(req.params.id);
+  const id = Number(req.params.id);
 
   if (isNaN(id)) {
     res.status(400).json({ error: 'ID inválido' });

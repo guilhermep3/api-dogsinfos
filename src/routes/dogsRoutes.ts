@@ -5,14 +5,11 @@ import * as pageController from "../controllers/pageController";
 
 const router = express.Router();
 
-router.get('/', pageController.home);
+router.get('/', (req, res) => {
+  const dogs = getDogs.getAll();
+  res.json(dogs)
+})
 router.get('/search', searchController.search);
 router.get('/:id', pageController.details);
-
-router.get('/all', (req, res) => {
-  const list = getDogs.getAll();
-
-  res.json({ dogs: list });
-})
 
 export default router;

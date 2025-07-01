@@ -16,5 +16,5 @@ export const search = (req: Request, res: Response) => {
     return;
   }
 
-  res.json({ dogs: list });
+  res.json(list);
 };
